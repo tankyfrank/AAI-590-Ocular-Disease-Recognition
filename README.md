@@ -19,16 +19,6 @@ Instructor: Roozbeh Sadeghian
 
 GitHub Repository URL: https://github.com/tankyfrank/AAI-590-Ocular-Disease-Recognition/edit/main/README.md
 
-Repository Structure
-This repository is structured to include all essential components of the project, following best practices for version control and collaborative development.
-
-📂 /data/ - Contains datasets used in training and evaluation.
-📂 /notebooks/ - Jupyter Notebooks containing exploratory data analysis, model building, and evaluations.
-📂 /models/ - Saved trained models and results.
-📂 /src/ - Python scripts for data preprocessing, model training, and testing.
-📂 /reports/ - Project documentation, final report, and analysis results.
-📜 README.md - Project overview, setup instructions, and repository documentation.
-
 ## Files and Their Purpose
 File/Directory	Description
 EDA.ipynb	Contains Exploratory Data Analysis (EDA), feature distribution, correlation analysis, and data preprocessing steps.
