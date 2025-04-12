@@ -6,7 +6,9 @@ Vision is a paramount aspect of navigating both social and physical infrastructu
 
 The most common of which being cataracts, glaucoma, age-related macular degeneration, and diabetes-related retinopathy (Cleveland Clinic, 2024). Early diagnosis is critical for effective treatment, however, traditional diagnostic methods rely heavily on manual image interpretation by ophthalmologists, which is time-consuming and opens the possibility of human error through misinterpretation. Similarly, one of the methodologies used to effectively diagnose individuals depends on retinal imaging, a medium of information primed for deep learning applications (Cleveland Clinic, 2024). With continuous advancements in artificial intelligence (AI) and deep learning, an automated screening and diagnostic tool becomes an increasingly viable solution in assisting healthcare professionals to more efficiently detect and diagnose ocular diseases. 
 
-This project aims to bring theory into practice, developing a deep learning-based model for automated ocular disease recognition using fundus (eye) images and associated patient metadata. By leveraging various convolutional neural network architectures (CNNs), we manage to accurately and consistently diagnose fundus images into one of eight categories covering diabetes, glaucoma, cataracts, age related macular degeneration, hypertension, pathological myopia, other diseases and abnormalities, or unaffected normal eyes.
+This project aims to bring theory into practice, developing a deep learning-based model for automated ocular disease recognition using fundus (eye) images and associated patient metadata. By leveraging modified convolutional neural network architectures (CNNs) with residual connections, Convolutional Block Attention Modules, and Atrous Spatial Pyramic Pooling, we manage to accurately and consistently diagnose fundus images into one of eight categories covering diabetes, glaucoma, cataracts, age related macular degeneration, hypertension, pathological myopia, other diseases and abnormalities, or unaffected normal eyes. 
+
+Demonstrated with the final model available under "ResnetMultiModal_V4.ipynb" in the *Final_Model* folder, we achieve 98% accuracy in classifying fundus images to the eight diseases, with similar precision, recall, and F1-scores. Overall, we provide a solid foundation on which to build a production ready model. 
 
 ## Project Overview
 Course: AAI-590
@@ -46,11 +48,11 @@ In addition to the folders, we have a standard .gitignore and README.md file ena
   - Images and metadata are imported from the ODIR-5K dataset available online, particularly on Kaggle (Andrew, D.). Data is subsequently cleaned, with image data augmented and transformed into tesnors, and patient medical data vectorized through TF-IDF
 
 2. Model Design and Development
-  - Two models were developed, the initial being an purely image-based CNN with regularization and dropout techniques. The second model was a hybridized CNN utilizing image and patient metadata with residual connections, CBAM modules, and ASPP for better feature abstraction through channels and spatial abstraction from images.
+  - Two models were developed, the initial being an purely image-based CNN with regularization and dropout techniques. The second model was a hybridized CNN utilizing image and patient metadata with residual connections, CBAM modules, and ASPP for better feature abstraction through channels and spatial abstraction from images. In total, the second and final model totaled just over 170,000,000 trainable parameters.
 
 3. Model Training and Optimization
 
-  - Our initial model trained across 100 epochs on Adam Optimizer set at 0.001, resulting in 47% accuracy. Our final model trained across 30 epochs utilizing AdamW optimizer set at 0.003 with a OneCyclerLR adjustment and a weight decay of 0.0001. It resulted in a total training time of approximately 6.5 minutes achieving a 98% accuracy and validation loss of 0.1019. 
+  - Our initial model trained across 100 epochs on Adam Optimizer set at 0.001, resulting in 47% accuracy. Our final model trained across 30 epochs utilizing AdamW optimizer set at 0.003 with a OneCyclerLR adjustment and a weight decay of 0.0001. It resulted in a total training time of approximately 6.5 minutes using 36.4 GB GPU, achieving a 98% accuracy and validation loss of 0.1019. 
 
 
 ## Key Technologies Used
